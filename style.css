@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: [header] 4fr [navbar] 1fr [services] 7fr [examples] 7fr [footer] 1fr;
+    grid-gap: 5px;
+}
+
+.header {
+    background-color: green;
+}
+
+.navbar {
+    min-height: 10vh;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.services {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+.examples {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.info {
+    background-color: rgba(0, 139, 139, 0.5);
+}
+
+.footer {
+    background-color: rgba(255, 192, 203, 0.5);
+}
+
+@media (orientation:landscape) and (min-width:640px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: [main] 8fr [aside] 2fr;
+    }
+
+    .header {
+        grid-column: main/3;
+        grid-row: header;
+    }
+
+    .navbar {
+        grid-column: main/3;
+        grid-row: navbar;
+    }
+
+    .examples {
+        grid-column: main;
+        grid-row: examples
+    }
+
+    .services {
+        grid-column: main;
+        grid-row: services;
+    }
+
+    .info {
+        grid-column: aside;
+        grid-row: services/footer;
+    }
+
+    .footer {
+        grid-column: main/3;
+        grid-row: footer
+    }
+
+
+}
