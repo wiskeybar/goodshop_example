@@ -4,6 +4,9 @@ body {
 }
 
 .wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: [header] 4fr [navbar] 1fr [services] 7fr [examples] 7fr [footer] 1fr;
@@ -12,6 +15,10 @@ body {
 
 .header {
     background-color: green;
+    background-image: url(img/1920x.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar {
@@ -72,4 +79,24 @@ body {
     }
 
 
+}
+
+@media (max-width:1440px) {
+    .wrapper {
+        max-width: 80%;
+    }
+
+    .header {
+        background-image: url(img/1280x.jpg);
+    }
+}
+
+@media (max-width:1280px) {
+    .wrapper {
+        max-width: 90%;
+    }
+
+    .header {
+        background-image: url(img/640x.jpg);
+    }
 }
