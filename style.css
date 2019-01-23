@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: [header] 4fr [navbar] 0.1fr [services] 7fr [examples] 7fr [footer] 1fr;
+    grid-template-rows: [header] 50vh [navbar] auto [services] auto [examples] auto [footer] auto;
     grid-gap: 5px;
 }
 
@@ -32,7 +32,16 @@ body {
     transform: translate(-50%, -50%);
     margin: 0;
     padding: 0;
+    font-size: calc(100vh/7);
 
+}
+
+h2 {
+    font-size: calc(100vh/25);
+}
+
+h3 {
+    font-size: calc(100vh/35);
 }
 
 h1,
@@ -41,6 +50,7 @@ h3,
 h4,
 .navbar_listItems {
     font-family: 'Oswald', sans-serif;
+    text-align: center;
 }
 
 .navbar_listItems {
@@ -78,6 +88,8 @@ h4,
     float: left;
     width: 50%;
     margin: 10px;
+    border-radius: 50%;
+    margin: 5vh;
 }
 
 .servicesText {
@@ -85,8 +97,32 @@ h4,
 }
 
 .examples {
-    background-color: rgba(255, 255, 0, 0.5);
+    display: grid;
+    grid-template: auto 7fr / 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    text-align: center;
 }
+
+.examplesContainer {
+    background-color: rgba(128, 128, 128, 0.075);
+    border-top-right-radius: 10%;
+    border-top-left-radius: 2%;
+}
+
+.examplesText {
+    opacity: 0.3;
+    transition: 0.3s all linear;
+}
+
+.examplesText:hover {
+    opacity: 1;
+}
+
+.examplesTitleMain {
+    grid-row: 1;
+    grid-column: 1/4;
+}
+
 
 .info {
     background-color: rgba(0, 139, 139, 0.5);
@@ -94,9 +130,12 @@ h4,
 
 .footer {
     background-color: rgba(255, 192, 203, 0.5);
+
+    min-height: 5vh;
+    margin-top: 5vh;
 }
 
-@media (orientation:landscape) and (min-width:640px) {
+@media (orientation:landscape) and (min-width:736px) {
     .wrapper {
         display: grid;
         grid-template-columns: [main] 8fr [aside] 2fr;
