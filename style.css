@@ -44,6 +44,11 @@ h3 {
     font-size: calc(100vh/35);
 }
 
+p {
+    font-size: calc(100vh/45);
+
+}
+
 h1,
 h2,
 h3,
@@ -104,7 +109,8 @@ h4,
 
 .examples {
     display: grid;
-    grid-template: auto 7fr / 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2vw;
     text-align: center;
 }
@@ -127,6 +133,7 @@ h4,
     grid-row: 1;
     grid-column: 1/4;
 }
+
 
 
 .info {
@@ -183,6 +190,16 @@ h4,
     .info {
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    .examples {
+        grid-template-rows: auto 1fr 1fr 1fr;
+        grid-template-columns: auto;
+    }
+
+    .examplesTitleMain {
+        grid-row: 1;
+        grid-column: auto;
     }
 }
 
